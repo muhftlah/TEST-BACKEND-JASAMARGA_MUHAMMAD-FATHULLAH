@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "960006d3-c692-4729-879e-7d125fb34b76",
+    "name": "JM",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20700687"
+  },
+  "item": [
+    {
+      "name": "create employees",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nik\": \"11012\",\r\n  \"name\": \"Budi\",\r\n  \"is_active\": true,    \r\n  \"start_date\": \"2022-12-12\",\r\n  \"end_date\": \"2029-12-12\",\r\n  \"profile\": {\r\n    \"place_of_birth\": \"Jakarta\",\r\n    \"date_of_birth\": \"1997-05-02\",\r\n    \"gender\": \"Laki-Laki\",\r\n    \"is_married\": true,\r\n    \"prof_pict\": null\r\n  },\r\n  \"families\": [\r\n    {\r\n      \"name\": \"Marni\",\r\n      \"identifier\": \"32100594109960002\",\r\n      \"job\": \"lbu Rumah Tangga\",\r\n      \"place_of_birth\": \"Denpasar\",\r\n      \"date_of_birth\": \"1995-10-17\",\r\n      \"religion\": \"Islam\",\r\n      \"is_life\": true,\r\n      \"is_divorced\": false\r\n    },\r\n    {\r\n      \"name\": \"Clara\",\r\n      \"identifier\": \"32100594109020004\",\r\n      \"job\": \"Pelajar\",\r\n      \"place_of_birth\": \"Bangkalan\",\r\n      \"date_of_birth\": \"2008-10-17\",\r\n      \"religion\": \"Islam\",\r\n      \"is_life\": true,\r\n      \"is_divorced\": false\r\n    },\r\n    {\r\n      \"name\": \"Stephanie\",\r\n      \"identifier\": \"32100594109960005\",\r\n      \"job\": \"lbu Rumah Tangga\",\r\n      \"place_of_birth\": \"Denpasar\",\r\n      \"date_of_birth\": \"1995-10-17\",\r\n      \"religion\": \"Islam\",\r\n      \"is_life\": true,\r\n      \"is_divorced\": false\r\n    }\r\n  ],\r\n  \"educations\": [\r\n    {\r\n      \"name\": \"SMKN 7 Jakarta\",\r\n      \"level\": \"SMA\",\r\n      \"description\": \"Sekolah Menengah Atas\"\r\n    }\r\n  ]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View All employees",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View 1 Employee",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Employee",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nik\": \"11012\",\r\n  \"name\": \"Budi\",\r\n  \"is_active\": true,    \r\n  \"start_date\": \"2022-12-12\",\r\n  \"end_date\": \"2029-12-12\",\r\n  \"profile\": {\r\n    \"place_of_birth\": \"Jakarta\",\r\n    \"date_of_birth\": \"1997-05-02\",\r\n    \"gender\": \" \",\r\n    \"is_married\": true,\r\n    \"prof_pict\": null\r\n  },\r\n  \"families\": [\r\n    {\r\n      \"name\": \"Marni\",\r\n      \"identifier\": \"32100594109960002\",\r\n      \"job\": \"lbu Rumah Tangga\",\r\n      \"place_of_birth\": \"Denpasar\",\r\n      \"date_of_birth\": \"1995-10-17\",\r\n      \"religion\": \"Islam\",\r\n      \"is_life\": true,\r\n      \"is_divorced\": false\r\n    },\r\n    {\r\n      \"name\": \"Clara\",\r\n      \"identifier\": \"32100594109020004\",\r\n      \"job\": \"Pelajar\",\r\n      \"place_of_birth\": \"Bangkalan\",\r\n      \"date_of_birth\": \"2008-10-17\",\r\n      \"religion\": \"Islam\",\r\n      \"is_life\": true,\r\n      \"is_divorced\": false\r\n    },\r\n    {\r\n      \"name\": \"Stephanie\",\r\n      \"identifier\": \"32100594109960005\",\r\n      \"job\": \"lbu Rumah Tangga\",\r\n      \"place_of_birth\": \"Denpasar\",\r\n      \"date_of_birth\": \"1995-10-17\",\r\n      \"religion\": \"Islam\",\r\n      \"is_life\": true,\r\n      \"is_divorced\": false\r\n    }\r\n  ],\r\n  \"educations\": [\r\n    {\r\n      \"name\": \"SMKN 7 Jakarta\",\r\n      \"level\": \"SMA\",\r\n      \"description\": \"Sekolah Menengah Atas\"\r\n    }\r\n  ]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View All Report",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees/report",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "report"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View All 1 Report",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/employees/report/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "employees",
+            "report",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
