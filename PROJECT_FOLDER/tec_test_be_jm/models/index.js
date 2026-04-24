@@ -9,6 +9,7 @@ Employee.hasOne(EmployeeProfile, {
 });
 EmployeeProfile.belongsTo(Employee, {
   foreignKey: "employee_id",
+  as: "employee",
 });
 
 Employee.hasMany(EmployeeFamily, {
@@ -17,6 +18,7 @@ Employee.hasMany(EmployeeFamily, {
 });
 EmployeeFamily.belongsTo(Employee, {
   foreignKey: "employee_id",
+  as: "employee",
 });
 
 Employee.hasMany(EmployeeEducation, {
@@ -25,6 +27,7 @@ Employee.hasMany(EmployeeEducation, {
 });
 EmployeeEducation.belongsTo(Employee, {
   foreignKey: "employee_id",
+  as: "employee",
 });
 
 module.exports = {

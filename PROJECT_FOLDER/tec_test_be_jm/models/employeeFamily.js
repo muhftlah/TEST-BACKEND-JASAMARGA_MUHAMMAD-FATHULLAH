@@ -15,7 +15,6 @@ const EmployeeFamily = sequelize.define("employee_families", {
   relation_status: DataTypes.STRING,
   created_by: { type: DataTypes.STRING, defaultValue: "admin" },
   updated_by: { type: DataTypes.STRING },
-  updated_at: { type: DataTypes.DATE, allowNull: true },
 }, {
   tableName: "employee_families",
   timestamps: true,

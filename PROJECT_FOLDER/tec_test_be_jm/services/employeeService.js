@@ -9,28 +9,37 @@ const {
 exports.createEmployee = async (payload) => {
   const t = await sequelize.transaction();
   try {
-    const { profile, families, educations, ...employeeData } = payload;
+    const { profile, families, educations, id, created_at, updated_at, ...employeeData } = payload;
+
     const employee = await Employee.create(employeeData, { transaction: t });
+
     if (profile) {
+      const { id: pId, created_at: pCa, updated_at: pUa, employee_id, ...profileData } = profile;
       await EmployeeProfile.create(
-        { ...profile, employee_id: employee.id },
+        { ...profileData, employee_id: employee.id },
         { transaction: t }
       );
     }
 
     if (families?.length) {
-      const familyData = families.map(f => ({
-        ...f,
-        employee_id: employee.id,
-      }));
+      const familyData = families.map(f => {
+        const { id: fId, created_at: fCa, updated_at: fUa, employee_id, ...fData } = f;
+        return {
+          ...fData,
+          employee_id: employee.id,
+        };
+      });
       await EmployeeFamily.bulkCreate(familyData, { transaction: t });
     }
 
     if (educations?.length) {
-      const eduData = educations.map(e => ({
-        ...e,
-        employee_id: employee.id,
-      }));
+      const eduData = educations.map(e => {
+        const { id: eId, created_at: eCa, updated_at: eUa, employee_id, ...eData } = e;
+        return {
+          ...eData,
+          employee_id: employee.id,
+        };
+      });
       await EmployeeEducation.bulkCreate(eduData, { transaction: t });
     }
 
@@ -91,10 +100,13 @@ exports.updateEmployee = async (id, payload) => {
         where: { employee_id: id },
         transaction: t,
       });
-      const familyData = families.map(f => ({
-        ...f,
-        employee_id: id,
-      }));
+      const familyData = families.map(f => {
+        const { id: fId, created_at: fCa, updated_at: fUa, employee_id, ...fData } = f;
+        return {
+          ...fData,
+          employee_id: id,
+        };
+      });
       await EmployeeFamily.bulkCreate(familyData, { transaction: t });
     }
     if (educations) {
@@ -102,10 +114,13 @@ exports.updateEmployee = async (id, payload) => {
         where: { employee_id: id },
         transaction: t,
       });
-      const eduData = educations.map(e => ({
-        ...e,
-        employee_id: id,
-      }));
+      const eduData = educations.map(e => {
+        const { id: eId, created_at: eCa, updated_at: eUa, employee_id, ...eData } = e;
+        return {
+          ...eData,
+          employee_id: id,
+        };
+      });
       await EmployeeEducation.bulkCreate(eduData, { transaction: t });
     }
     await t.commit();
